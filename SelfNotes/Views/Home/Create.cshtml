@@ -1,0 +1,22 @@
+﻿@model SelfNotes.Models.Note
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm("Create", "Home"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>New Note</legend>
+        <h3>New Note</h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
